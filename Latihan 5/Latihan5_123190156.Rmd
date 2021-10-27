@@ -1,0 +1,49 @@
+---
+title: "Latihan5_123190156"
+author: "Duta Alamin"
+date: "10/27/2021"
+output: pdf_document
+---
+
+```{r cars}
+
+compute_s_n <- function(n){ 
+x <- 1:n 
+sum(x) 
+} 
+
+for(i in 1:5){ 
+print(i) 
+} 
+#> [1] 1 
+#> [1] 2 
+#> [1] 3 
+#> [1] 4 
+#> [1] 5 
+
+m <- 25 
+s_n <- vector(length = m) # create an empty vector 
+for(n in 1:m){ 
+s_n[n] <- compute_s_n(n) 
+}
+
+n <- 1:m 
+plot(n, s_n)
+
+x <- 1:10 
+sqrt(x) 
+#> [1] 1.00 1.41 1.73 2.00 2.24 2.45 2.65 2.83 3.00 3.16 
+y <- 1:10 
+x*y 
+#> [1] 1 4 9 16 25 36 49 64 81 100 
+
+n <- 1:25 
+compute_s_n(n)
+
+x <- 1:10 
+sapply(x, sqrt) 
+#> [1] 1.00 1.41 1.73 2.00 2.24 2.45 2.65 2.83 3.00 3.16
+
+n <- 1:25 
+s_n <- sapply(n, compute_s_n)
+
