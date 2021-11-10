@@ -1,0 +1,42 @@
+---
+title: "Untitled"
+author: "Duta Alamin"
+date: "11/10/2021"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(dslabs)
+library(tidyverse)
+data(murders)
+as_tibble(murders) %>% class()
+murders_tibble <- as_tibble(murders) %>% class() 
+
+as_tibble(murders) %>% group_by(region)
+
+
+library(dplyr)
+murders %>% 
+     pull(population) %>% 
+     log %>%
+     mean %>% 
+     exp
+
+library(purrr)
+compute_s_n <- function(n){ 
+ x <- 1:n 
+ sum(x) 
+} 
+n <- 1:100 
+s_n <- sapply(n, compute_s_n)
+compute_s_n <- function(n){ 
+ x <- 1:n 
+ tibble(sum = sum(x)) 
+} 
+s_n <- map_df(n, compute_s_n)
+as_tibble(s_n)
+
+```
